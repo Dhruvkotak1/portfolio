@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kotak Dhruv - Portfolio</title>
+
+    <!-- ✅ Stable DaisyUI v4 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- ✅ Stable Tailwind CSS v3 Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/e2703a677a.js" crossorigin="anonymous"></script>
+
+    <!-- Custom Styles for Scroll Animations -->
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body class="scroll-smooth bg-base-100 text-base-content antialiased">
+
+    <!-- NAVBAR START -->
+    <div class="navbar bg-base-100/80 backdrop-blur-md shadow-sm sticky top-0 z-50 px-4 md:px-8">
+        <div class="flex-1">
+            <a href="#profile" class="btn btn-ghost text-xl gap-2 font-bold tracking-tight">
+                <i class="fas fa-code text-primary"></i>
+                <span>Dhruv Kotak</span>
+            </a>
+        </div>
+
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 hidden lg:flex font-medium">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li>
+                    <!-- Theme Toggle -->
+                    <label class="swap swap-rotate p-2 rounded-full hover:bg-base-200 transition duration-300">
+                        <input type="checkbox" id="themeToggle" />
+                        <i class="swap-on fas fa-sun text-yellow-500 text-xl"></i>
+                        <i class="swap-off fas fa-moon text-xl text-slate-600"></i>
+                    </label>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div class="dropdown dropdown-end lg:hidden">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <i class="fas fa-bars text-xl"></i>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-52 font-medium">
+                    <li><a href="#profile"><i class="fas fa-user w-4"></i> Profile</a></li>
+                    <li><a href="#skills"><i class="fas fa-lightbulb w-4"></i> Skills</a></li>
+                    <li><a href="#projects"><i class="fas fa-laptop-code w-4"></i> Projects</a></li>
+                    <li><a href="#internships"><i class="fas fa-briefcase w-4"></i> Internships</a></li>
+                    <li><a href="#certifications"><i class="fas fa-certificate w-4"></i> Certifications</a></li>
+                    <li class="mt-2 flex justify-center">
+                        <label class="swap swap-rotate p-2 rounded-full bg-base-200">
+                            <input type="checkbox" id="themeToggle2" />
+                            <i class="swap-on fas fa-sun text-yellow-500 text-xl"></i>
+                            <i class="swap-off fas fa-moon text-xl"></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- NAVBAR END -->
+
+    <!-- HERO SECTION -->
+    <section id="profile" class="min-h-screen flex items-center justify-center px-6 py-20 bg-base-100 relative overflow-hidden">
+        <!-- Subtle background decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center fade-in-section">
+            
+            <!-- Text Content -->
+            <div class="flex-1 text-center md:text-left space-y-6">
+                <div class="badge badge-primary badge-outline px-4 py-3 text-sm font-semibold uppercase tracking-wider mb-2">IT Student & Developer</div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dhruv Kotak</span>
+                </h1>
+                <p class="text-lg md:text-xl text-base-content/80 max-w-2xl leading-relaxed">
+                    An aspiring software developer passionate about crafting elegant solutions through code. I love building data-driven projects, solving real-world problems, and constantly expanding my technical horizons.
+                </p>
+
+                <!-- Personal Info Mini-Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm md:text-base font-medium text-base-content/70 max-w-xl mx-auto md:mx-0 py-4">
+                    <p class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-phone text-primary"></i> +91 9316299084</p>
+                    <p class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-envelope text-primary"></i> dhruvkotak769@gmail.com</p>
+                    <p class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-map-marker-alt text-primary"></i> Gujarat, India</p>
+                    <p class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-birthday-cake text-primary"></i> Age: <span id="age">20</span></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 mt-4 justify-center md:justify-start">
+                    <a href="resume.pdf" download class="btn btn-primary shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-outline hover:scale-105 transition-transform">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-8 flex justify-center md:justify-start gap-6 text-2xl">
+                    <a href="https://github.com/Dhruvkotak1" target="_blank" class="text-base-content/70 hover:text-primary transition-colors hover:-translate-y-1 duration-300"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/dhruv-kotak-26535731a/" target="_blank" class="text-base-content/70 hover:text-primary transition-colors hover:-translate-y-1 duration-300"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/dhruv_kotak45" target="_blank" class="text-base-content/70 hover:text-primary transition-colors hover:-translate-y-1 duration-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="flex-shrink-0 relative group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+                <img src="photo.jpg" alt="Dhruv's Photo" class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-base-100 object-cover shadow-2xl z-10 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6 bg-base-200">
+        <div class="max-w-6xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Technical Skills</h2>
+                <p class="text-base-content/70">The tools and technologies I use to bring ideas to life.</p>
+            </div>
+            
+            <!-- Category Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Core Languages -->
+                <div class="card bg-base-100 shadow-sm border border-base-content/5 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="card-body">
+                        <h3 class="card-title text-xl mb-4 border-b border-base-content/10 pb-2"><i class="fas fa-code text-primary"></i> Core Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-lg bg-primary/10 text-primary border-none font-semibold">Python</span>
+                            <span class="badge badge-lg bg-secondary/10 text-secondary border-none font-semibold">Java</span>
+                            <span class="badge badge-lg bg-warning/10 text-warning-content border-none font-semibold">JavaScript</span>
+                            <span class="badge badge-lg bg-info/10 text-info border-none font-semibold">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web & Frameworks -->
+                <div class="card bg-base-100 shadow-sm border border-base-content/5 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="card-body">
+                        <h3 class="card-title text-xl mb-4 border-b border-base-content/10 pb-2"><i class="fas fa-layer-group text-secondary"></i> Web & Frameworks</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-lg badge-outline">HTML5 & CSS3</span>
+                            <span class="badge badge-lg badge-outline">Django</span>
+                            <span class="badge badge-lg badge-outline">Laravel</span>
+                            <span class="badge badge-lg badge-outline">Tailwind CSS</span>
+                            <span class="badge badge-lg badge-outline">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data & Databases -->
+                <div class="card bg-base-100 shadow-sm border border-base-content/5 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="card-body">
+                        <h3 class="card-title text-xl mb-4 border-b border-base-content/10 pb-2"><i class="fas fa-database text-accent"></i> Data & Tools</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-lg bg-success/10 text-success border-none font-semibold">MySQL (DBMS)</span>
+                            <span class="badge badge-lg badge-outline">Scikit-Learn</span>
+                            <span class="badge badge-lg badge-outline">Pandas</span>
+                            <span class="badge badge-lg badge-outline">NumPy</span>
+                            <span class="badge badge-lg badge-outline">Git / GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-6 bg-base-100">
+        <div class="max-w-6xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-base-content/70">Real-world applications built with modern frameworks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Project 1: EventCrafter -->
+                <div class="card bg-base-200 shadow-md border border-base-content/5 overflow-hidden group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                        <!-- Placeholder for Project Image/Icon -->
+                        <i class="fas fa-calendar-check text-6xl text-primary/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="card-body flex-grow">
+                        <h3 class="card-title text-2xl font-bold">EventCrafter</h3>
+                        <p class="text-base-content/80 mt-2">A full-featured event management platform with role-based dashboards (Admin, Organizer, Customer) and analytics integration.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="badge badge-primary badge-outline text-xs">Laravel</span>
+                            <span class="badge badge-secondary badge-outline text-xs">MySQL</span>
+                            <span class="badge badge-accent badge-outline text-xs">Chart.js</span>
+                            <span class="badge badge-ghost badge-outline text-xs">DaisyUI</span>
+                        </div>
+                        <div class="card-actions justify-end mt-6">
+                            <a href="https://github.com/Dhruvkotak1/EventCrafter-deploy" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Admission Predictor -->
+                <div class="card bg-base-200 shadow-md border border-base-content/5 overflow-hidden group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                        <!-- Placeholder for Project Image/Icon -->
+                        <i class="fas fa-chart-line text-6xl text-secondary/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="card-body flex-grow">
+                        <h3 class="card-title text-2xl font-bold">Admission Predictor</h3>
+                        <p class="text-base-content/80 mt-2">A Machine Learning web app built to predict college admission chances using a trained linear regression model.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="badge badge-primary badge-outline text-xs">Django</span>
+                            <span class="badge badge-secondary badge-outline text-xs">Scikit-Learn</span>
+                            <span class="badge badge-accent badge-outline text-xs">Joblib</span>
+                            <span class="badge badge-ghost badge-outline text-xs">Bootstrap</span>
+                        </div>
+                        <div class="card-actions justify-end mt-6">
+                            <a href="https://github.com/Dhruvkotak1/Admission_predictor" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- To add a 3rd project later, just copy the whole <div class="card..."> block above and paste it here! -->
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS SECTION -->
+    <section id="internships" class="py-24 px-6 bg-base-200">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Experience & Internships</h2>
+            </div>
+      
+            <ul class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
+                <!-- Internship 1 -->
+                <li>
+                    <div class="timeline-middle">
+                        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fab fa-laravel text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-end mb-10 md:text-left pl-4 md:pl-8">
+                        <time class="font-mono text-sm text-primary font-semibold">May 2025 – July 2025</time>
+                        <h3 class="text-xl font-bold mt-1 text-base-content">Laravel Framework Intern</h3>
+                        <p class="text-sm font-medium text-base-content/60 mb-3">Amafhh IT Solution, Morbi</p>
+                        <p class="text-base-content/80 leading-relaxed mb-4">
+                            Completed a 6-week backend development internship using Laravel. Gained hands-on experience with MVC architecture, database migrations, REST APIs, and advanced routing.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1qgo6JxsZHVLvD6CH77JvNaElAoWe_w5e/view?usp=drive_link" class="btn btn-outline btn-sm shadow-sm" target="_blank">
+                            <i class="fas fa-award mr-1"></i> View Certificate
+                        </a>
+                    </div>
+                    <hr class="bg-base-content/10"/>
+                </li>
+          
+                <!-- Internship 2 -->
+                <li>
+                    <hr class="bg-base-content/10"/>
+                    <div class="timeline-middle">
+                        <div class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-start mb-10 md:text-right pr-4 md:pr-8">
+                        <time class="font-mono text-sm text-secondary font-semibold">June 2024 – July 2024</time>
+                        <h3 class="text-xl font-bold mt-1 text-base-content">Flutter Developer Intern</h3>
+                        <p class="text-sm font-medium text-base-content/60 mb-3">BuiltUp Technologies, Ahmedabad</p>
+                        <p class="text-base-content/80 leading-relaxed mb-4">
+                            Participated in a hands-on 15-day internship focusing on cross-platform application development using Flutter. Built functional UI screens and explored core widgets.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1qdIyFEkXHYnbKVozblE0gHnkEoJIj_Z6/view?usp=drive_link" class="btn btn-outline btn-sm shadow-sm" target="_blank">
+                            <i class="fas fa-award mr-1"></i> View Certificate
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="py-24 px-6 bg-base-100">
+        <div class="max-w-6xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Certifications</h2>
+                <p class="text-base-content/70">Continuous learning and skill validation.</p>
+            </div>
+      
+            <!-- Responsive Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cert 1 -->
+                <div class="card bg-base-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-base-content/5 group h-full">
+                    <div class="card-body px-6 py-8 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-code text-primary text-3xl mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="card-title text-lg font-bold leading-tight mb-3">Joy of Computing using Python</h3>
+                            <p class="text-sm text-base-content/70 mb-4">NPTEL</p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1_Eb-9w1KbY3LjPIxIcfCylJbbSG7UGYR/view?usp=drive_link" target="_blank" class="text-primary font-semibold text-sm hover:underline flex items-center">
+                            View Credentials <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="card bg-base-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-base-content/5 group h-full">
+                    <div class="card-body px-6 py-8 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-brands fa-java text-secondary text-3xl mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="card-title text-lg font-bold leading-tight mb-3">Programming in Java</h3>
+                            <p class="text-sm text-base-content/70 mb-4">NPTEL</p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1hJhDsidAXFTC7xSE8kp4lebDM4OTBzXa/view?usp=drive_link" target="_blank" class="text-secondary font-semibold text-sm hover:underline flex items-center">
+                            View Credentials <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="card bg-base-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-base-content/5 group h-full">
+                    <div class="card-body px-6 py-8 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-robot text-accent text-3xl mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="card-title text-lg font-bold leading-tight mb-3">Machine Learning with Python</h3>
+                            <p class="text-sm text-base-content/70 mb-4">IBM</p>
+                        </div>
+                        <a href="https://courses.cognitiveclass.ai/certificates/b7ea1688470b407b8a5a7371dd5fde43" target="_blank" class="text-accent font-semibold text-sm hover:underline flex items-center">
+                            View Credentials <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="card bg-base-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-base-content/5 group h-full">
+                    <div class="card-body px-6 py-8 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-brands fa-python text-primary text-3xl mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="card-title text-lg font-bold leading-tight mb-3">Python 3.4.3</h3>
+                            <p class="text-sm text-base-content/70 mb-4">IIT Bombay</p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1GkK2U1k-CE98_onW18ZhDxemn3MEpi91/view?usp=drive_link" target="_blank" class="text-primary font-semibold text-sm hover:underline flex items-center">
+                            View Credentials <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="card bg-base-200 shadow-sm hover:shadow-xl transition-all duration-300 border border-base-content/5 group h-full">
+                    <div class="card-body px-6 py-8 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-brain text-secondary text-3xl mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="card-title text-lg font-bold leading-tight mb-3">Basic Problem Solving</h3>
+                            <p class="text-sm text-base-content/70 mb-4">HackerRank</p>
+                        </div>
+                        <a href="https://www.hackerrank.com/certificates/2970e1ab297b" target="_blank" class="text-secondary font-semibold text-sm hover:underline flex items-center">
+                            View Credentials <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 bg-base-200">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <div class="bg-base-100 shadow-2xl rounded-3xl p-8 md:p-12 border border-base-content/5">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold mb-3">Let's Connect</h2>
+                    <p class="text-base-content/70">Have a project in mind or looking to hire? Drop me a message.</p>
+                </div>
+
+                <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text font-semibold">Your Name</span></label>
+                        <input type="text" name="user_name" placeholder="John Doe" class="input input-bordered w-full focus:outline-primary" required />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label"><span class="label-text font-semibold">Your Email</span></label>
+                        <input type="email" name="user_email" placeholder="john@example.com" class="input input-bordered w-full focus:outline-primary" required />
+                    </div>
+
+                    <div class="form-control md:col-span-2">
+                        <label class="label"><span class="label-text font-semibold">Subject</span></label>
+                        <select name="subject" class="select select-bordered w-full focus:outline-primary" required>
+                            <option disabled selected>Select an inquiry type</option>
+                            <option>Hiring Inquiry</option>
+                            <option>Freelance Project</option>
+                            <option>Collaboration Opportunity</option>
+                            <option>General Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control md:col-span-2">
+                        <label class="label"><span class="label-text font-semibold">Message</span></label>
+                        <textarea name="message" rows="5" placeholder="How can I help you?" class="textarea textarea-bordered w-full focus:outline-primary resize-none" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full md:col-span-2 shadow-lg shadow-primary/30 mt-2">
+                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                    </button>
+                </form>
+                <p id="form-message" class="mt-6 text-center font-medium hidden"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer footer-center p-8 bg-base-100 text-base-content border-t border-base-content/10">
+        <div>
+            <div class="flex gap-4 text-xl mb-2">
+                <a href="https://github.com/Dhruvkotak1" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dhruv-kotak-26535731a/" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="font-medium">&copy; <span id="year"></span> Dhruv Kotak. Built with Tailwind & DaisyUI.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // 1. Dynamic Year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // 2. EmailJS Integration
+        emailjs.init("yuO9kKcrR2EYdxLDB"); 
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const btn = this.querySelector("button");
+            const msgEl = document.getElementById("form-message");
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading loading-spinner"></span> Sending...';
+            msgEl.classList.add("hidden");
+
+            emailjs.sendForm("service_td1ya0p", "template_7pcq1dt", this)
+                .then(() => {
+                    msgEl.innerHTML = "<i class='fas fa-check-circle'></i> Your message has been sent successfully!";
+                    msgEl.className = "mt-6 text-center font-medium text-success block";
+                    this.reset();
+                })
+                .catch((error) => {
+                    msgEl.innerHTML = "<i class='fas fa-exclamation-triangle'></i> Failed to send message. Please try again.";
+                    msgEl.className = "mt-6 text-center font-medium text-error block";
+                    console.error("EmailJS Error:", error);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Send Message';
+                });
+        });
+
+        // 3. Scroll Fade-in Animation Logic
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: stop observing once it has animated in
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.15 }); // Triggers when 15% of the element is visible
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // 4. Basic Theme Toggle Logic (ensure it works with your script.js if you still have one)
+        const toggleButtons = document.querySelectorAll('input[type="checkbox"][id^="themeToggle"]');
+        const htmlElement = document.documentElement;
+
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('change', (e) => {
+                const newTheme = e.target.checked ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', newTheme);
+                // Keep mobile and desktop toggles in sync
+                toggleButtons.forEach(b => b.checked = e.target.checked);
+            });
+        });
+    </script>
+</body>
+</html>
